@@ -1,0 +1,30 @@
+{
+  "name": "namaste-react-restart",
+  "version": "1.0.0",
+  "description": "this is namaste react",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhythm55/Namaste-react-restart.git"
+  },
+  "keywords": [],
+  "author": "Rhythm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhythm55/Namaste-react-restart/issues"
+  },
+  "homepage": "https://github.com/rhythm55/Namaste-react-restart#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 10 Chrome version"
+  ]
+}
