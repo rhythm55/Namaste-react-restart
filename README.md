@@ -1,6 +1,7 @@
 ### Chapter1 : inception
 - [notes](https://github.com/rhythm55/Namaste-react-restart/blob/main/notes/inception.md)
 - [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/c7fff483a081eb777b078422d306db1e060abc69)
+- [assignment](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-01-inception.md)
 
 ### Ignite your app 
 - [notes](https://github.com/rhythm55/Namaste-react-restart/blob/main/notes/ignite-your-app.md)
