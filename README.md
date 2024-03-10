@@ -6,3 +6,4 @@
 ### Ignite your app 
 - [notes](https://github.com/rhythm55/Namaste-react-restart/blob/main/notes/ignite-your-app.md)
 - [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/8c1637309a09121123d2f2fc7e1c74acc323f7db)
+- [assignment](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-02-ingnition.md)
