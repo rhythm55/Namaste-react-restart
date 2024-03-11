@@ -1,0 +1,12 @@
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+img{
+    height: 3rem;
+    width: 3rem;
+}
