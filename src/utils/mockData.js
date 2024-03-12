@@ -1,4 +1,3 @@
-// RestaurantList is JSON Data for displaying cards
 export default restaurantList = [
     {
       type: "restaurant",

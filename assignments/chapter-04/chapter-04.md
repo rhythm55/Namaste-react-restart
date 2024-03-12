@@ -55,28 +55,6 @@ const ComponentWithEmptyTag = () => (
 
 ***
 
-Q: What is Reconciliation in React?
-A:
-Reconciliation is the process through which React updates the Browser DOM and makes React work faster. React use a `diffing algorithm` so that component updates are predictable and faster. 
-
-React would first calculate the difference between the real DOM and the copy of DOM (Virtual DOM) 
-when there's an update of components. React stores a copy of Browser DOM which is called `Virtual DOM`. 
-When we make changes or add data, React creates a new Virtual DOM and compares it with the previous one. Comparison is done by Diffing Algorithm. 
-
-React compares the Virtual DOM with Real DOM. It finds out the changed nodes and updates only the changed nodes in Real DOM leaving the rest nodes as it is. This process is called Reconciliation.
-
-***
-Q:What is React Fiber?
-
-A:
-React Fiber is a concept of ReactJS that is used to render a system faster, smoother and smarter. The Fiber reconciler, which became the default reconciler for React 16 and above, is a complete rewrite of React’s reconciliation algorithm to solve some long-standing issues in React. Because Fiber is asynchronous, React can:
-
-Pause, resume, and restart rendering work on components as new updates come in
-Reuse previously completed work and even abort it if not needed
-Split work into chunks and prioritize tasks based on importance
-
-***
-
 Q: Why do we need keys in React?
 A:
 
