@@ -1,26 +1,57 @@
-import RestrauntCardComponent from './RestrauntCard'
-import restaurantList from '../utils/mockData'
-import { useState } from 'react';
+import RestrauntCardComponent from "./RestrauntCard";
+import { useEffect, useState } from "react";
+import ShimmmerComponent from "./shimmer";
+import {SWIGGY_API_URL} from "../utils/constants"
 
 const BodyComponent = () => {
-    const [restruantsList, setrestruantsList] = useState(restaurantList);
-    const filterRestrauntList = () => {
-      const filteredResList = restruantsList.filter((res) => res.data.avgRating > 4)
-      setrestruantsList(filteredResList);
-    }
+  const [restruantList, setRestruantList] = useState([]);
+  const [filteredRestruantList, setFilteredRestruantList] = useState([]);
+  const [searchInput, setSearchInput] = useState('')
 
-    return (
-      <div className="body">
-        <div className="search">
-          <input type="input"></input>
-          <button>search</button>
-          <button onClick={filterRestrauntList}>filter</button>
-        </div>
-        <div className="restraunt-container">
-         { restruantsList.map((restraunt) => (<RestrauntCardComponent key={restraunt.data.id} resData={restraunt.data} />)) }
-        </div>
-      </div>
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+     SWIGGY_API_URL
     );
+    const json = await data.json()
+    const elements = json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    const list = elements.map((ele) => ele.info)
+    setRestruantList(list)
+    setFilteredRestruantList(list)
   };
+
+  const searchRestraunt = () => {
+      const searchResults = restruantList.filter((restruant)=> restruant.name.toLowerCase().includes(searchInput));
+      setFilteredRestruantList(searchResults)
+  }
+
+  const topRatedRestrauntList = () => {
+    const result = restruantList.filter(
+      (restruant) => restruant.avgRating > 4
+    );
+    setFilteredRestruantList(result);
+  };
+ 
+  return filteredRestruantList.length === 0 ? <ShimmmerComponent/> :(
+    <div className="body">
+      <div className="search">
+        <input type="input" onChange={(e) => setSearchInput(e.target.value)}></input>
+        <button onClick={() => searchRestraunt()}>search</button>
+        <button onClick={() => topRatedRestrauntList()}>Top Rated restraunt</button>
+      </div>
+      <div className="restraunt-container">
+        {filteredRestruantList.map((restraunt) => (
+          <RestrauntCardComponent
+            key={restraunt.id}
+            resData={restraunt}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default BodyComponent;
