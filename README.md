@@ -36,5 +36,5 @@
  *  - contact
  */
 
-- [code commit]()
-- [assignment - theory ]()
+- [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/9ba84e0a5ee499f9087263f6850456fa38dfa499)
+- [assignment - theory ](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-05/chapter-05.md)
