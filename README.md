@@ -38,3 +38,9 @@
 
 - [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/9ba84e0a5ee499f9087263f6850456fa38dfa499)
 - [assignment - theory ](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-05/chapter-05.md)
+
+
+### Chapter 6: exploring the world
+
+- [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/dea907ec25916258fd886a9bc10c6bfbd8dc1d26)
+- [assignment - theory ](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-06.md)
