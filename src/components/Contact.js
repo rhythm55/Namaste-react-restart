@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
 const Contact = () => {
-  return (
-    <div>Contact</div>
-  )
-}
+  useEffect(() => {
+    const timer = setInterval(() => console.log("contact event called"), 1000);
 
-export default Contact
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  return <div>Contact</div>;
+};
+
+export default Contact;

@@ -41,7 +41,7 @@ export const RestrauntDetail = () => {
           <h4>{restrauntDetails.totalRatingsString}</h4>
         </div>
       </div>
-      {restrauntMenu.map((menu) => (
+      {restrauntMenu?.map((menu) => (
         <div key={menu.card.info.id} className="menu-item">
           <div className="display-flex">
             <div className="menu-item-details">
