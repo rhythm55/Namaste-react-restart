@@ -44,3 +44,8 @@
 
 - [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/dea907ec25916258fd886a9bc10c6bfbd8dc1d26)
 - [assignment - theory ](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-06.md)
+
+### Chapter 7: Finding the path
+
+- [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/99bc87364b9177faf2046e00b74465407b315150)
+- [assignment - theory](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-07.md)
