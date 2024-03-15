@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import ShimmmerComponent from "./shimmer";
 import { SWIGGY_API_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const BodyComponent = () => {
   const [restruantList, setRestruantList] = useState([]);
@@ -36,6 +37,16 @@ const BodyComponent = () => {
     const result = restruantList.filter((restruant) => restruant.avgRating > 4);
     setFilteredRestruantList(result);
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (!onlineStatus) {
+    return (
+      <>
+        <h1>you are offline</h1>
+      </>
+    );
+  }
 
   return filteredRestruantList.length === 0 ? (
     <ShimmmerComponent />

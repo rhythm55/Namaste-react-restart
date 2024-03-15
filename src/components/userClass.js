@@ -6,15 +6,27 @@ class UserClass extends React.Component {
     super(props);
 
     this.state = {
-      count: 0,
+      userInfo: {
+        name: "dummy",
+        location: "dummy",
+        avatar_url: "dummy",
+        bio: "dummy",
+      },
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // console.log("child componentDidMount called");
     this.timer = setInterval(() => {
       console.log("i was called");
     }, 1000);
+
+    const data = await fetch("https://api.github.com/users/rhythm55");
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
   }
 
   componentWillUnmount() {
@@ -22,25 +34,14 @@ class UserClass extends React.Component {
   }
 
   render() {
-    // console.log("child render called");
-    const { name, location } = this.props;
-    const { count, count2 } = this.state;
+    const { name, location, avatar_url, bio } = this.state.userInfo;
 
     return (
       <div className="user-card">
-        <h1>{count}</h1>
-        <button
-          onClick={() =>
-            this.setState({
-              count: count + 1,
-            })
-          }
-        >
-          Update count
-        </button>
+        <img src={avatar_url} alt="user-logo"></img>
+        <p>{bio}</p>
         <h1>Name : {name}</h1>
         <h3>Location: {location}</h3>
-        <h4>Contact: rhythmthakur05@gmail.com</h4>
       </div>
     );
   }

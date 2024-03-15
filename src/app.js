@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import HeaderComponent from "./components/Header";
 import BodyComponent from "./components/Body";
 import About from "./components/About";
-import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestrauntDetail from "./components/RestrauntDetail";
 
@@ -18,6 +17,8 @@ const AppLayout = () => {
     </div>
   );
 };
+
+const Contact = lazy(() => import("./components/Contact"));
 
 const appRouter = createBrowserRouter([
   {
@@ -39,7 +40,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback="<h1>Loding...</h1>">
+            <Contact />
+          </Suspense>
+        ),
       },
     ],
   },
