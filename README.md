@@ -49,3 +49,9 @@
 
 - [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/99bc87364b9177faf2046e00b74465407b315150)
 - [assignment - theory](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-07.md)
+
+
+### Chapter 8: get classy
+
+- [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/7f7e4eee498ea11885666fed5c18b9f408a67b09)
+- [assignment - theory](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-08.md)
