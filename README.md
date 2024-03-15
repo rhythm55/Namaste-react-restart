@@ -55,3 +55,7 @@
 
 - [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/7f7e4eee498ea11885666fed5c18b9f408a67b09)
 - [assignment - theory](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-08.md)
+
+### Chapter 9: Optimising our app
+- [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/eff26adfc54dc354708fc1968f6f2a08633dd8a3)
+- [assignment - theory](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-09.md)
