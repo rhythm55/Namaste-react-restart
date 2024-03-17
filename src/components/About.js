@@ -16,7 +16,7 @@ class About extends React.Component {
     return (
       <>
         <h1>about page</h1>
-        <UserClass name="rhythm" location="bangalore"></UserClass>
+        <UserClass></UserClass>
       </>
     );
   }

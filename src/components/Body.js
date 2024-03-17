@@ -1,15 +1,18 @@
-import RestrauntCardComponent from "./RestrauntCard";
+import RestrauntCardComponent, { withPromoteLabel } from "./RestrauntCard";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import ShimmmerComponent from "./shimmer";
 import { SWIGGY_API_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import useBiryaniList from "../utils/useBiryaniList";
 
 const BodyComponent = () => {
   const [restruantList, setRestruantList] = useState([]);
   const [filteredRestruantList, setFilteredRestruantList] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [biryaniToggle, setBiryaniToggle] = useState(false);
+  const RestrauntCardPromoted = withPromoteLabel(RestrauntCardComponent);
 
   useEffect(() => {
     fetchData();
@@ -38,6 +41,18 @@ const BodyComponent = () => {
     setFilteredRestruantList(result);
   };
 
+  const biryaniList = useBiryaniList();
+
+  const toggleBiryaniList = () => {
+    const newBiryaniToggle = !biryaniToggle;
+    setBiryaniToggle(newBiryaniToggle);
+    if (newBiryaniToggle) {
+      setFilteredRestruantList(biryaniList);
+    } else {
+      setFilteredRestruantList(restruantList);
+    }
+  };
+
   const onlineStatus = useOnlineStatus();
 
   if (!onlineStatus) {
@@ -61,11 +76,22 @@ const BodyComponent = () => {
         <button onClick={() => topRatedRestrauntList()}>
           Top Rated restraunt
         </button>
+        <button onClick={() => toggleBiryaniList()}>
+          {biryaniToggle ? "clear Biryani results" : "get Biryani"}
+        </button>
       </div>
       <div className="restraunt-container">
-        {filteredRestruantList.map((restraunt) => (
-          <Link key={restraunt.id} to={`restaurant/${restraunt.id}`}>
-            <RestrauntCardComponent resData={restraunt} />
+        {filteredRestruantList?.map((restraunt) => (
+          <Link
+            className="res-link"
+            key={restraunt.id}
+            to={`restaurant/${restraunt.id}`}
+          >
+            {restraunt.promoted ? (
+              <RestrauntCardPromoted resData={restraunt} />
+            ) : (
+              <RestrauntCardComponent resData={restraunt} />
+            )}
           </Link>
         ))}
       </div>

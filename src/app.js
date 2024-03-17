@@ -7,13 +7,16 @@ import BodyComponent from "./components/Body";
 import About from "./components/About";
 import Error from "./components/Error";
 import RestrauntDetail from "./components/RestrauntDetail";
+import UserContext from "./components/UserContext";
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState("Any");
   return (
     <div className="app">
-      {console.log(useState())}
-      <HeaderComponent />
-      <Outlet />
+      <UserContext.Provider value={{ loggedInUserName: userName, setUserName }}>
+        <HeaderComponent />
+        <Outlet />
+      </UserContext.Provider>
     </div>
   );
 };

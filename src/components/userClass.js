@@ -1,4 +1,6 @@
 import React from "react";
+import { GITHUB_API_USER } from "../utils/constants";
+import UserContext from "./UserContext";
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -21,7 +23,7 @@ class UserClass extends React.Component {
       console.log("i was called");
     }, 1000);
 
-    const data = await fetch("https://api.github.com/users/rhythm55");
+    const data = await fetch(GITHUB_API_USER);
     const json = await data.json();
 
     this.setState({
@@ -42,6 +44,9 @@ class UserClass extends React.Component {
         <p>{bio}</p>
         <h1>Name : {name}</h1>
         <h3>Location: {location}</h3>
+        <UserContext.Consumer>
+          {(data) => <h3>logged in user : {data.loggedInUserName}</h3>}
+        </UserContext.Consumer>
       </div>
     );
   }
