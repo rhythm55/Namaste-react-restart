@@ -1,19 +1,27 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 import { CLOUDINARY_IMAGE_URL } from "../utils/constants";
 
 const ItemList = (props) => {
   const item = props.item;
+  const dispatch = useDispatch();
+  const onAddClick = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div className="menu-item">
       <div className="display-flex">
         <div className="menu-item-details">
-          <p className={item.isVeg === 1 ? "green" : "red"}></p>
-          <h1>{item.name}</h1>
-          <p>{item.price}</p>
-          <p>{item.description}</p>
+          <button onClick={() => onAddClick(item)}>Add</button>
+          <p className={item?.isVeg === 1 ? "green" : "red"}></p>
+          <h1>{item?.name}</h1>
+          <p>{item?.price}</p>
+          <p>{item?.description}</p>
         </div>
         <div className="menu-item-image">
           <img
-            src={`${CLOUDINARY_IMAGE_URL},h_208,c_fit/${item.imageId}`}
+            src={`${CLOUDINARY_IMAGE_URL},h_208,c_fit/${item?.imageId}`}
           ></img>
         </div>
       </div>

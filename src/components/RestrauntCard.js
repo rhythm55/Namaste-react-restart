@@ -2,6 +2,7 @@ import { CLOUDINARY_IMAGE_URL } from "../utils/constants";
 
 export default RestrauntCardComponent = (props) => {
   const { name, cloudinaryImageId, cuisines, sla, avgRating } = props.resData;
+
   return (
     <div className="restraunt-card">
       <img

@@ -1,6 +1,7 @@
 import React, { useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import HeaderComponent from "./components/Header";
 import BodyComponent from "./components/Body";
@@ -8,16 +9,18 @@ import About from "./components/About";
 import Error from "./components/Error";
 import RestrauntDetail from "./components/RestrauntDetail";
 import UserContext from "./components/UserContext";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState("Any");
   return (
-    <div className="app">
+    <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUserName: userName, setUserName }}>
         <HeaderComponent />
         <Outlet />
       </UserContext.Provider>
-    </div>
+    </Provider>
   );
 };
 
@@ -48,6 +51,10 @@ const appRouter = createBrowserRouter([
             <Contact />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

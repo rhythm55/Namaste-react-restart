@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -10,6 +11,7 @@ const HeaderComponent = () => {
   const [btnText, setBtnText] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const loggedInUser = useContext(UserContext);
+  const cartItems = useSelector((state) => state.cart.items);
 
   return (
     <div className="header d-flex justify-content-between p-2">
@@ -28,7 +30,9 @@ const HeaderComponent = () => {
           <li>
             <Link to="/contact">Contact us</Link>
           </li>
-          <li>Cart</li>
+          <li>
+            <Link to={"/cart"}>Cart ({cartItems.length})</Link>
+          </li>
           <li>
             <button
               onClick={() => {
