@@ -1,10 +1,10 @@
 import { CLOUDINARY_IMAGE_URL } from "../utils/constants";
 
-export default RestrauntCardComponent = (props) => {
+const RestrauntCardComponent = (props) => {
   const { name, cloudinaryImageId, cuisines, sla, avgRating } = props.resData;
 
   return (
-    <div className="restraunt-card">
+    <div data-testid="restraunt-card" className="restraunt-card">
       <img
         className="restraunt-card-image"
         src={`${CLOUDINARY_IMAGE_URL}/${cloudinaryImageId}`}
@@ -17,6 +17,8 @@ export default RestrauntCardComponent = (props) => {
     </div>
   );
 };
+
+export default RestrauntCardComponent;
 
 // Higher order component
 

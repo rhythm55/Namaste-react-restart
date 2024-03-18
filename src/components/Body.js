@@ -70,6 +70,7 @@ const BodyComponent = () => {
       <div className="search">
         <input
           type="input"
+          data-testid="search-input"
           onChange={(e) => setSearchInput(e.target.value)}
         ></input>
         <button onClick={() => searchRestraunt()}>search</button>

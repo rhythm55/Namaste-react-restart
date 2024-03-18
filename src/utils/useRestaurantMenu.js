@@ -10,7 +10,6 @@ const useRestaurantMenu = (resId) => {
   const fetchData = async () => {
     const result = await fetch(SWIGGY_API_RESTRUANT_DETAIL + resId);
     const json = await result.json();
-    console.log("json", json);
     const resturantDetailInfo = json?.data?.cards[0]?.card?.card?.info;
     const restrauntMenu =
       json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(

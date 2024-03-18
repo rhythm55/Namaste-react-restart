@@ -10,7 +10,7 @@ const ItemList = (props) => {
   };
 
   return (
-    <div className="menu-item">
+    <div data-testid="menu-item" className="menu-item">
       <div className="display-flex">
         <div className="menu-item-details">
           <button onClick={() => onAddClick(item)}>Add</button>

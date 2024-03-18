@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import ItemList from "./ItemList";
 
 const RestaurantCategory = ({ data, showItem, setShowItemIndex }) => {
@@ -8,7 +6,11 @@ const RestaurantCategory = ({ data, showItem, setShowItemIndex }) => {
   };
 
   return (
-    <div className="accordion" onClick={() => handleClick()}>
+    <div
+      data-testid="res-accordion"
+      className="accordion"
+      onClick={() => handleClick()}
+    >
       <div className="accordion-title">
         <div>{data.title}</div> <div>⬇️</div>
       </div>

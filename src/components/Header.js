@@ -37,9 +37,9 @@ const HeaderComponent = () => {
             <button
               onClick={() => {
                 setBtnText(btnText === "Login" ? "Logout" : "Login");
-                loggedInUser.setUserName(
-                  btnText === "Login" ? "Rhythm Thakur" : "Pankhi"
-                );
+                // loggedInUser.setUserName(
+                //   btnText === "Login" ? "Rhythm Thakur" : "Pankhi"
+                // );
               }}
             >
               {btnText}
