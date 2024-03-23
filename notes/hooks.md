@@ -71,3 +71,19 @@ https://github.com/rhythm55/Namaste-react-restart/assets/36883992/815454e5-adce-
 
 # useRef
 - lets you reference a value thats not needed for rendering
+-example
+```
+const refName = useRef(null);
+<input type="text" placeholder="use ref" ref={refName} />
+```
+- without useref using
+  
+
+https://github.com/rhythm55/Namaste-react-restart/assets/36883992/2f38b95e-8f23-494c-a9bb-0c740051122c
+
+
+- with using useref
+
+
+https://github.com/rhythm55/Namaste-react-restart/assets/36883992/50035b19-8b50-4e38-b5b7-83e07151daf5
+
