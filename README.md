@@ -110,3 +110,29 @@ const Child = forwardRef((props, ref) => {
   return <input type="text" ref={inputRef} />;
 });
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### reportWebVitals.js in react
+- give metrics of web vitals
+- Google uses core web vitals for one of its ranking factor for google SEO
+- CLS : cumulative layout shift : how much the layout shifts unexpectedly when users are viewing your webpage. Ex: you are reading a blog and suddenly a pop up comes for some subscription - it was an expected layout shift and bad user experience
+- LCP: Largest contentful paint : how fast the largest content of your page gets rendered - ideal <2.5s . Sometimes largest content is text/image/video/logo
+- FID: First input delay - ex: your js code is running in main thread - it its very time consuming it will block main thread - meanwhile user clicked on a button nothing will happen till main thread is unblocked as in main thread js is still running 
