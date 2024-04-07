@@ -59,3 +59,54 @@
 ### Chapter 9: Optimising our app
 - [code commit](https://github.com/rhythm55/Namaste-react-restart/commit/eff26adfc54dc354708fc1968f6f2a08633dd8a3)
 - [assignment - theory](https://github.com/rhythm55/Namaste-react-restart/blob/main/assignments/chapter-09.md)
+
+
+***
+
+### forwardRef API and useImperativeHandle Hook
+
+- forwardRef : Lets your component expose a DOM node to parent component with a ref.
+     - generally used where parent component needs to access child component node.
+     - ex: pause play button are in parent - and child component is responsible for playing video .
+     - in above example parent uses forwardRef to access video node and play/pause when user clicks on button
+- useImperativeHandle: React Hook that lets you customize the handle exposed as a ref.
+    - For example, suppose you don’t want to expose the entire <input> DOM node, but you want to expose two of its methods: focus and scrollIntoView.
+ 
+```
+// parentComponent.js
+const Parent = () => {
+  const childRef = useRef(null);
+  const focusChild = () => {
+    childRef.current.focus();
+  };
+  const changeChildBg = () => {
+    childRef.current.changeColor();
+  };
+
+  return (
+    <div>
+      <button onClick={() => focusChild()}>Focus child</button>
+      <button onClick={() => changeChildBg()}>Change color</button>
+      <Child ref={childRef} />
+    </div>
+  );
+};
+```
+
+```
+//childComponent.js
+const Child = forwardRef((props, ref) => {
+  const inputRef = useRef(null);
+  useImperativeHandle(ref, () => {
+    return {
+      focus() {
+        inputRef.current.focus();
+      },
+      changeColor() {
+        inputRef.current.style.backgroundColor = "orange";
+      },
+    };
+  });
+  return <input type="text" ref={inputRef} />;
+});
+```
